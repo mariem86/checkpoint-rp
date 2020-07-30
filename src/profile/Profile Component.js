@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import  HandleName from './HandleName'  
 const defaultProps ={
    fullName:"",
    bio:"",
@@ -11,32 +11,31 @@ const myPropTypes = {
    bio: PropTypes.string,
    profession: PropTypes.string
 }
+const mystyle = {
+   color: "white",
+   backgroundColor: "DodgerBlue",
+   padding: "10px",
+   fontFamily: "Arial"
+ }; 
 
  function ProfileB (props)  {
-   function handleName(e){
+   function handleClick(e){
       e.preventDefault();
-      alert("Admin!");
+      alert("test!");
     }
-    const mystyle = {
-      color: "white",
-      backgroundColor: "DodgerBlue",
-      padding: "10px",
-      fontFamily: "Arial"
-    }; 
+   
        return (
          <div>
           <h1 style={mystyle}>fullName:{props.fullName}</h1>
           <p style={{color:"navy",textindent: "30px"}} > bio:{props.bio}</p>
           <h1 style={mystyle}>profession:{props.profession}</h1> 
             {props.children}
-           <a href="/" onClick={handleName}>
-            click me
-            </a>
+           <HandleName  handleClick ={ handleClick}/>
          </div>
         )
    }
-      export default ProfileB
-      ProfileB.defaultProps= defaultProps
+      export default ProfileB;
+    ProfileB.defaultProps= defaultProps;
       PropTypes.checkPropTypes(myPropTypes);
       
 
