@@ -1,16 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import  HandleName from './HandleName'  
-const defaultProps ={
-   fullName:"",
-   bio:"",
-   profession:"" 
-};
-const myPropTypes = {
-   fullName: PropTypes.string,
-   bio: PropTypes.string,
-   profession: PropTypes.string
-}
 const mystyle = {
    color: "white",
    backgroundColor: "DodgerBlue",
@@ -19,6 +8,7 @@ const mystyle = {
  }; 
 
  function ProfileB (props)  {
+
    function handleClick(e){
       e.preventDefault();
       alert("test!");
@@ -34,8 +24,12 @@ const mystyle = {
          </div>
         )
    }
+    ProfileB.defaultProps = {
+      fullName: "Anne Hathaway",
+      profession:" Actrice",
+      bio:" est une actrice américaine, née le 12 novembre 1982 à Brooklyn"
+    }; 
       export default ProfileB;
-    ProfileB.defaultProps= defaultProps;
-      PropTypes.checkPropTypes(myPropTypes);
+  
       
 
